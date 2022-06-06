@@ -7,13 +7,9 @@ let spiralOrder = function (matrix) {
   if (matrix.length === 0 || matrix[0].length === 0) {
     return [];
   }
-  let rows = matrix.length,
-    columns = matrix[0].length;
+  let rows = matrix.length, columns = matrix[0].length;
+  let left = 0, right = columns - 1, top = 0, bottom = rows - 1;
   let order = [];
-  let left = 0,
-    right = columns - 1;
-  let top = 0,
-    bottom = rows - 1;
   while (left <= right && top <= bottom) {
     for (let column = left; column <= right; column++) {
       order.push(matrix[top][column]);
